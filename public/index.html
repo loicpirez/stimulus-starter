@@ -6,6 +6,47 @@
   <script src="bundle.js" async></script>
 </head>
 <body>
-  <h1 data-controller="example"></h1>
+  <div data-controller="content-loader" data-content-loader-refresh-interval-value="5000"
+     data-content-loader-url-value="/messages.html">
+    
+    
+     <!-- <a href="#" data-content-loader-url-param="/messages.html" data-action="content-loader#load">Messages</a>
+     <a href="#" data-content-loader-url-param="/comments.html" data-action="content-loader#load">Comments</a> -->
+   
+    
+    </div>
+  <div data-controller="slideshow" class="slideshow">
+  <!-- <div data-controller="slideshow" class="slideshow" data-slideshow-index-value="1"> -->
+    <h2 data-slideshow-target="text"></h2>
+    <button data-action="slideshow#previous"> ← </button>
+    <button data-action="slideshow#next"> → </button>
+  
+    <div class="emoji">
+      <div data-slideshow-target="slide">🐵</div>
+      <div data-slideshow-target="slide">🙈</div>
+      <div data-slideshow-target="slide">🙉</div>
+      <div data-slideshow-target="slide">🙊</div>  
+    </div>
+  </div>  
+  <div data-controller="clipboard" data-clipboard-supported-class="clipboard--supported">
+    <h2 data-clipboard-target="text"></h2>
+    <div>
+      PIN: <textarea data-clipboard-target="source" type="text" readonly>1234</textarea>
+      <a href="#" data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</a>
+    </div>
+  </div>
+  <div data-controller="clipboard" data-clipboard-supported-class="clipboard--supported">
+    <h2 data-clipboard-target="text"></h2>
+    <div>
+      PIN: <input data-clipboard-target="source" type="text" value="4567" readonly>
+      <button data-action="clipboard#copy" class="clipboard-button" >Copy to Clipboard</button>
+    </div>
+  </div>
+  <div data-controller="hello">
+    <h2 data-hello-target="text"></h2>
+    <input data-hello-target="name" type="text">
+    <button data-action="click->hello#greet">Greet</button>
+  </div>
+  <h2 data-controller="example"></h2>
 </body>
 </html>
